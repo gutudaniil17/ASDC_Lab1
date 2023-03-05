@@ -91,7 +91,7 @@ public class Main {
         System.out.println("Position of the element = " + position);*/
 
 
-        MyTree tree = new MyTree();
+/*        MyTree tree = new MyTree();
         for (Competitor competitor : listOfCompetitors){
             tree.add(competitor);
         }
@@ -101,7 +101,7 @@ public class Main {
         long before = System.nanoTime();
         System.out.println("Contains first element==> " + tree.contains(competitor1));
         long after =System.nanoTime();
-        System.out.println("Time of search => " + (after-before));
+        System.out.println("Time of search => " + (after-before));*/
 
 
 

@@ -94,15 +94,12 @@ public class Algorithms {
         long startTime = System.nanoTime();
         long endTime;
 
+
         int i,q,p,m;
         int k = 0;
         int listSize = list.size();
         boolean stop = false;
 
-        //k - index of element in the Fibonacci row
-        // Нам необходимо найти такое целое число в ряде Фибонначи, что k+1 член ряда больше или равен
-        // кол-ву элементов массива + 1.
-        // То есть если у нас 7 элементов в массиве, k+1 это 7 элемент ряда, что равно 13 это больше 11(кол-во элементов+1)
         while (getFibonacciNumber(k + 1) < listSize + 1) {
             k++;
         }
@@ -130,27 +127,27 @@ public class Algorithms {
                 int temp = q;
                 q = p - q;
                 p = temp;;
-            } else if (ID < list.get(i).getId()) {
+            } else if (searched.getNumberInTable() < list.get(i).getNumberInTable()) {
                 if (q == 0)
                     stop = true;
                 i = i - q;
                 int temp = q;
                 q = p - q;
                 p = temp;
-            } else if (ID > list.get(i).getId()) {
+            } else if (searched.getNumberInTable() > list.get(i).getNumberInTable()) {
                 if (p == 1)
                     stop = true;
                 i = i + q;
                 p = p - q;
                 q = q - p;
             }
-            else if (list.get(i).getId() == ID) {
+            else if (list.get(i).getNumberInTable() ==searched.getNumberInTable()) {
                 result = i;
                 break;
             }
         }
         endTime = System.nanoTime();
         System.out.println("Time of execution: " + (endTime - startTime) + " Nano Seconds");
-        return list.get(result);
+        return result;
     }
 }
